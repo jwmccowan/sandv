@@ -1,0 +1,5 @@
+node_modules
+foundryconfig.json
+dist
+foundry
+data
