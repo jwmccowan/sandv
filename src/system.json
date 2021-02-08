@@ -1,6 +1,6 @@
 {
-  "name": "swnr",
-  "title": "Stars Without Number: Revised",
+  "name": "sandv",
+  "title": "Scum and Villainy",
   "description": "",
   "version": "0.1.0",
   "author": "",
@@ -12,8 +12,8 @@
     }
   ],
   "scripts": [],
-  "esmodules": ["swnr.js"],
-  "styles": ["swnr.css"],
+  "esmodules": ["sandv.js"],
+  "styles": ["sandv.css"],
   "packs": [],
   "languages": [],
   "gridDistance": 2,

@@ -1,0 +1,111 @@
+<form class="{{cssClass}}" flexcol autocomplete="off">
+  <header class="sheet-header flexrow">
+    <img
+      class="profile"
+      src="{{actor.img}}"
+      data-edit="img"
+      title="{{actor.name}}"
+    />
+    <section class="header-details flexrow">
+      <h1 class="charname">
+        <input
+          name="actor.name"
+          type="text"
+          value="{{actor.name}}"
+          placeholder="Translate me"
+        />
+      </h1>
+      <aside class="header-exp flexcol">
+        <div class="charlevel" title="Character Level">
+          <label>Level 3</label>
+          <span class="levels">Expert</span>
+        </div>
+        <div class="experience flexrow">
+          <input
+            name="data.details.xp.value"
+            type="text"
+            value="2"
+            placeholder="0"
+            data-dtype="Number"
+          />
+          <span class="sep">/</span>
+          <span class="max">3</span>
+        </div>
+        <div class="xpbar">
+          <span class="bar" style="width: 50%"></span>
+        </div>
+      </aside>
+      <ul class="summary flexrow">
+        <li>
+          <input
+            type="text"
+            name="data.details.race"
+            value="Human"
+            placeholder="translate me"
+          />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="data.details.background"
+            value="Soldier"
+            placeholder="translate me"
+          />
+        </li>
+        <!-- <li>
+          <input
+            type="text"
+            name="data.details.alignment"
+            value="Ximenes Shipyards"
+            placeholder="translate me"
+          />
+        </li> -->
+      </ul>
+      <ul class="attributes flexrow">
+        <li class="attribute health">
+          <h4 class="attribute-name box-title">Hit Points</h4>
+          <div class="attribute-value multiple">
+            <input
+              name="data.health.value"
+              type="text"
+              value="{{data.health.value}}"
+              placeholder="10"
+              data-dtype="Number"
+            />
+            <span class="sep"> / </span>
+            <input
+              name="data.health.max"
+              type="text"
+              value="{{data.health.max}}"
+              placeholder="10"
+              data-dtype="Number"
+            />
+          </div>
+        </li>
+
+        <li class="attribute">
+          <h4 class="attribute-name box-title">Armor Class</h4>
+          <div class="attribute-value">
+            <input
+              name="data.attributes.ac.value"
+              type="number"
+              value="16"
+              placeholder="10"
+            />
+          </div>
+        </li>
+        <li class="attribute">
+          <h4 class="attribute-name box-title">System Strain</h4>
+          <div class="attribute-value multiple">
+            <label class="hit-dice">8 <span class="sep"> / </span> 8</label>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </header>
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="items">Items</a>
+  </nav>
+  <section class="sheet-body">Hi there</section>
+</form>

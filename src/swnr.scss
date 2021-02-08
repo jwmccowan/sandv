@@ -1,5 +1,265 @@
+$actorNameHeight: 60px;
+$detailsHeight: 40px;
+$borderLight: #ccc;
+$borderDark: #666;
+$colorDark: #191813;
+$colorFaint: #c9c7b8;
+$colorBeige: #b5b3a4;
+$colorTan: #7a7971;
+
+$sfWhite: #e4eff0;
+$sfLightBlue: #78cce2;
+$sfGrey: #4e7988;
+$sfDarkBlue: #005066;
+$sfBlack: #002439;
+$borderGroove: 2px solid #eeede0;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
+
 /* ------------------------------------ */
 /*				   Sass					*/
 /* This is your Sass entry file			*/
 /* ------------------------------------ */
+.swnr {
+  input[type='text'],
+  input[type='number'],
+  select {
+    height: calc(100% - 2px);
+    border: 1px solid $sfWhite;
+    background: rgba(0, 0, 0, 0.05);
+    color: $sfWhite;
+  }
 
+  img.profile {
+    border: none;
+  }
+
+  .summary {
+    flex: 0 0 100%;
+    height: $detailsHeight;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: $borderGroove;
+    border-bottom: none;
+
+    li {
+      height: calc(100% - 6px);
+      float: left;
+      margin: 0 0;
+      padding: 0;
+      border-right: $borderGroove;
+      line-height: 34px;
+      color: $sfWhite;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    &:hover,
+    &:focus {
+      border: 1px solid $sfWhite;
+      box-shadow: 0 0 8px $sfLightBlue;
+    }
+  }
+
+  &.sheet {
+    .window-header {
+      background-color: $sfDarkBlue;
+      border-color: $sfWhite;
+    }
+    .window-content {
+      background-color: $sfDarkBlue;
+      background-image: none;
+      color: $sfWhite;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    h4.box-title {
+      height: 18px;
+      line-height: 16px;
+      margin: 4px 8px 2px;
+      font-weight: 500;
+      font-size: 18px;
+      color: $sfWhite;
+      // border-bottom: 1px solid $sfWhite;
+      white-space: nowrap;
+    }
+
+    input[type='text'],
+    input[type='number'] {
+      background: none;
+      border: 1px solid transparent;
+      &:hover,
+      &:focus {
+        border: 1px solid $sfWhite;
+      }
+    }
+    span.sep {
+      flex: none;
+      margin: 0 1px;
+      display: inline;
+      position: relative;
+      color: $sfWhite;
+      font-weight: normal;
+    }
+    .sheet-header {
+      h1 {
+        flex: 1;
+        border-bottom: none;
+        height: 60px;
+        margin: 0;
+        padding: 5px;
+
+        input {
+          display: block;
+          height: 50px;
+          font-size: 32px;
+          margin: 0;
+        }
+      }
+    }
+
+    &.actor {
+      .sheet-header {
+        .header-exp {
+          flex: 0 0 150px;
+          margin-right: 3px;
+          height: $actorNameHeight;
+          justify-content: flex-end;
+          text-align: right;
+        }
+
+        ul.attributes {
+          flex: 0 0 100%;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+
+          li.attribute {
+            height: 70px;
+            margin: 0;
+            border: none;
+            border-top: $borderGroove;
+            border-right: $borderGroove;
+            border-radius: 0;
+            padding-top: 8px;
+            // height: 60px;
+            // margin: 0 5px 0 0;
+            // border: $borderGroove;
+            // border-radius: 4px;
+            text-align: center;
+
+            &:last-child {
+              margin: 0;
+              border-right: none;
+            }
+
+            .attribute-value {
+              height: 30px;
+              line-height: 30px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              // height: 28px;
+              // line-height: 28px;
+
+              > * {
+                font-weight: 400;
+                font-size: 24px;
+              }
+
+              &.multiple input {
+                flex: 0 0 33%;
+              }
+            }
+
+            .attribute-footer {
+              flex: 0 0 18px;
+              margin-top: -1px;
+              line-height: 18px;
+              font-family: 'Signika', sans-serif;
+              font-size: 12px;
+              font-weight: 400;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        .attributes {
+          .attribute {
+            &:last-child {
+            }
+
+            .attribute-value {
+            }
+          }
+        }
+      }
+    }
+
+    &.character {
+      .sheet-header {
+        img.profile {
+          height: 170px;
+          max-width: 160px;
+        }
+      }
+      h1.charname {
+        flex: 1;
+        height: $actorNameHeight;
+        padding: 0;
+        font-family: Orbitron;
+        input {
+          height: $actorNameHeight - 20px;
+          margin: 10px 0;
+        }
+      }
+      .charlevel {
+        flex: 0 0 20px;
+        height: 20px;
+        font-size: 18px;
+        color: $sfWhite;
+        white-space: nowrap;
+      }
+
+      .header-exp {
+        flex: 0 0 150px;
+        margin-right: 3px;
+        height: $actorNameHeight;
+        justify-content: flex-end;
+        text-align: right;
+      }
+      .experience {
+        flex: 0 0 32px;
+        margin-bottom: -5px;
+        align-items: center;
+        font-size: 18px;
+        span.max {
+          color: $sfWhite;
+          flex: none;
+          margin-left: 3px;
+        }
+      }
+      .xpbar {
+        flex: 0 0 8px;
+        width: 100%;
+        margin-bottom: 5px;
+        background: $sfDarkBlue;
+        border: 1px solid $sfWhite;
+        border-radius: 3px;
+        .bar {
+          height: 4px;
+          margin: 1px;
+          display: block;
+          background: $sfWhite;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}

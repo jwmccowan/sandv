@@ -3,3 +3,4 @@ foundryconfig.json
 dist
 foundry
 data
+.DS_STORE

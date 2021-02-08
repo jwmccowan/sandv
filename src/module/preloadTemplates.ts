@@ -1,7 +1,7 @@
-export const preloadTemplates = async function() {
-	const templatePaths = [
-		// Add paths to "systems/swnr/templates"
-	];
+export const preloadTemplates = async function () {
+  const templatePaths = [
+    'systems/sandv/templates/character/character-actor-sheet.html',
+  ];
 
-	return loadTemplates(templatePaths);
-}
+  return loadTemplates(templatePaths);
+};

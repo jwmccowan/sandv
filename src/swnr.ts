@@ -13,37 +13,51 @@
 // Import TypeScript modules
 import { registerSettings } from './module/settings.js';
 import { preloadTemplates } from './module/preloadTemplates.js';
+import { CharacterActor } from './module/character/character.actor.js';
+import { CharacterActorSheet } from './module/character/character.actor-sheet.js';
 
 /* ------------------------------------ */
 /* Initialize system					*/
 /* ------------------------------------ */
-Hooks.once('init', async function() {
-	console.log('swnr | Initializing swnr');
+Hooks.once('init', async function () {
+  console.log('sandv | Initializing sandv');
 
-	// Assign custom classes and constants here
-	
-	// Register custom system settings
-	registerSettings();
-	
-	// Preload Handlebars templates
-	await preloadTemplates();
+  // Assign custom classes and constants here
 
-	// Register custom sheets (if any)
+  // Register custom system settings
+  registerSettings();
+  // TODO: bad!
+  CONFIG.Actor.entityClass = <never>CharacterActor;
+
+  Actors.unregisterSheet('core', ActorSheet);
+  Actors.registerSheet('sandv', CharacterActorSheet, {
+    types: ['character'],
+    makeDefault: true,
+  });
+  // Actors.registerSheet('sandv', CharacterActorSheet, {
+  //   types: ['npc'],
+  //   makeDefault: true,
+  // });
+
+  // Preload Handlebars templates
+  await preloadTemplates();
+
+  // Register custom sheets (if any)
 });
 
 /* ------------------------------------ */
 /* Setup system							*/
 /* ------------------------------------ */
-Hooks.once('setup', function() {
-	// Do anything after initialization but before
-	// ready
+Hooks.once('setup', function () {
+  // Do anything after initialization but before
+  // ready
 });
 
 /* ------------------------------------ */
 /* When ready							*/
 /* ------------------------------------ */
-Hooks.once('ready', function() {
-	// Do anything once the system is ready
+Hooks.once('ready', function () {
+  // Do anything once the system is ready
 });
 
 // Add any additional hooks if necessary

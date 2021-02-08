@@ -2,7 +2,7 @@
   "Actor": {
     "types": ["character", "npc"],
     "templates": {
-      "base": {
+      "living": {
         "health": {
           "value": 10,
           "min": 0,
@@ -11,10 +11,82 @@
       }
     },
     "character": {
-      "templates": ["base"]
+      "templates": ["living"],
+      "details": {
+        "alias": "",
+        "name": ""
+      },
+      "attributes": {
+        "insight": {
+          "exp": [0],
+          "label": "Insight",
+          "actions": {
+            "doctor": {
+              "exp": [0],
+              "label": "Doctor"
+            },
+            "hack": {
+              "exp": [0],
+              "label": "Hack"
+            },
+            "rig": {
+              "exp": [0],
+              "label": "Rig"
+            },
+            "study": {
+              "exp": [0],
+              "label": "Study"
+            }
+          }
+        },
+        "prowess": {
+          "exp": [0],
+          "label": "Prowess",
+          "actions": {
+            "helm": {
+              "exp": [0],
+              "label": "Helm"
+            },
+            "scramble": {
+              "exp": [0],
+              "label": "Scramble"
+            },
+            "scrap": {
+              "exp": [0],
+              "label": "Scrap"
+            },
+            "skulk": {
+              "exp": [0],
+              "label": "Skulk"
+            }
+          }
+        },
+        "resolve": {
+          "exp": [0],
+          "label": "Resolve",
+          "actions": {
+            "attune": {
+              "exp": [0],
+              "label": "Attune"
+            },
+            "command": {
+              "exp": [0],
+              "label": "Command"
+            },
+            "consort": {
+              "exp": [0],
+              "label": "Consort"
+            },
+            "sway": {
+              "exp": [0],
+              "label": "Sway"
+            }
+          }
+        }
+      }
     },
     "npc": {
-      "templates": ["base"]
+      "templates": ["living"]
     }
   },
   "Item": {

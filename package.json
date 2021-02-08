@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "swnr",
+  "name": "sandv",
   "version": "0.1.0",
   "description": "",
   "scripts": {
@@ -8,8 +8,7 @@
     "build": "gulp build && gulp link",
     "build:watch": "gulp watch",
     "clean": "gulp clean && gulp link --clean",
-    "foundry": "node foundry/resources/app/main.js --noupnp --dataPath=./data",
-    "update": "npm install --save-dev gitlab:foundry-projects/foundry-pc/foundry-pc-types"
+    "foundry": "node foundry/resources/app/main.js --noupnp --dataPath=./data"
   },
   "author": "",
   "license": "",
