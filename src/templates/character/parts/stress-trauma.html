@@ -1,0 +1,137 @@
+<div id="stress-trauma" class="stress-trauma flexrow">
+  <div id="character-{{actor._id}}-stress" class="stress">
+    <div class="black-bar"></div>
+    {{#multiboxes data.health.stress.value}}
+    <input
+      type="radio"
+      id="character-{{actor._id}}-stress-0"
+      name="data.health.stress.value"
+      value="0"
+      dtype="Radio"
+    />
+    <label class="stress-trauma__label" for="character-{{actor._id}}-stress-0">
+      {{data.health.stress.label}}
+    </label>
+    {{#from_to 1 data.health.stress.max}}
+    <input
+      type="radio"
+      id="character-{{../actor._id}}-stress-{{this}}"
+      name="data.health.stress.value"
+      value="{{this}}"
+      dtype="Radio"
+    />
+    <label
+      class="stress-trauma__input-label"
+      for="character-{{../actor._id}}-stress-{{this}}"
+    ></label>
+    {{/from_to}} {{/multiboxes}}
+  </div>
+  <div id="character-{{actor._id}}-trauma" class="trauma">
+    {{#multiboxes data.health.trauma.value}}
+    <input
+      type="radio"
+      id="character-{{actor._id}}-trauma-0"
+      name="data.health.trauma.value"
+      value="0"
+      dtype="Radio"
+    />
+    <label class="stress-trauma__label" for="character-{{actor._id}}-trauma-0">
+      {{data.health.trauma.label}}
+    </label>
+    {{#from_to 1 data.health.trauma.max}}
+    <input
+      type="radio"
+      id="character={{../actor._id}}-trauma-{{this}}"
+      name="data.health.trauma.value"
+      value="{{this}}"
+      dtype="Radio"
+    />
+    <label
+      class="stress-trauma__input-label"
+      for="character={{../actor._id}}-trauma-{{this}}"
+    ></label
+    >{{/from_to}} {{/multiboxes}}
+  </div>
+</div>
+<div class="trauma-list" id="trauma-list">
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.cold"
+      value="cold"
+      {{checked
+      data.health.trauma.list.cold}}
+    />
+    <span class="checkmark">Cold</span>
+  </label>
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.haunted"
+      value="haunted"
+      {{checked
+      data.health.trauma.list.haunted}}
+    />
+    <span class="checkmark">Haunted</span>
+  </label>
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.obsessed"
+      value="obsessed"
+      {{checked
+      data.health.trauma.list.obsessed}}
+    />
+    <span class="checkmark">Obsessed</span>
+  </label>
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.paranoid"
+      value="paranoid"
+      {{checked
+      data.health.trauma.list.paranoid}}
+    />
+    <span class="checkmark">Paranoid</span>
+  </label>
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.reckless"
+      value="reckless"
+      {{checked
+      data.health.trauma.list.reckless}}
+    />
+    <span class="checkmark">Reckless</span>
+  </label>
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.soft"
+      value="soft"
+      {{checked
+      data.health.trauma.list.soft}}
+    />
+    <span class="checkmark">Soft</span>
+  </label>
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.unstable"
+      value="unstable"
+      {{checked
+      data.health.trauma.list.unstable}}
+    />
+    <span class="checkmark">Unstable</span>
+  </label>
+  <label>
+    <input
+      type="checkbox"
+      name="data.health.trauma.list.vicious"
+      value="vivious"
+      {{checked
+      data.health.trauma.list.vicious}}
+    />
+    <span class="checkmark">Vicious</span>
+  </label>
+</div>

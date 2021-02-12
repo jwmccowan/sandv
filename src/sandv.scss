@@ -1,0 +1,212 @@
+$sfWhite: #e4eff0;
+$sfLightBlue: #78cce2;
+$sfGrey: #4e7988;
+$sfDarkBlue: #005066;
+$sfBlack: #002439;
+$borderGroove: 2px solid #eeede0;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+@mixin xoomer($width, $height) {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-grow: 0;
+
+  label {
+    & {
+      width: $width;
+      height: $height;
+      transform: skew(-25deg);
+      background-color: $sfLightBlue;
+      border: 1px solid $sfBlack;
+      margin-left: 8px;
+      cursor: pointer;
+
+      &:last-of-type {
+        margin-right: 8px;
+      }
+
+      &[for$='-0'] {
+        width: auto;
+        height: auto;
+        background-color: $sfBlack !important;
+        color: $sfWhite;
+        padding: 6px 8px;
+        font-size: 16px;
+        z-index: 1;
+        transform: none;
+        margin-left: 0px;
+
+        &:hover {
+          color: $sfLightBlue;
+        }
+
+        // i {
+        //   margin-top: 4px;
+        // }
+      }
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked {
+      & ~ label {
+        background-color: $sfWhite;
+      }
+      & + label {
+        background-color: $sfLightBlue;
+      }
+    }
+  }
+}
+
+/* ------------------------------------ */
+/*				   Sass					*/
+/* This is your Sass entry file			*/
+/* ------------------------------------ */
+.sandv {
+  .window-content {
+    font-family: 'Orbitron', sans-serif;
+    background-image: none;
+    background-color: $sfWhite;
+    color: $sfBlack;
+  }
+
+  &.actor {
+    img.profile {
+      flex: 0 0 170px;
+      height: 170px;
+      margin: 0 0 0 12px;
+    }
+    .character-name,
+    .character-alias {
+      input {
+        font-size: 24px;
+      }
+    }
+
+    .attribute-xoomer {
+      @include xoomer(16px, 32px);
+    }
+
+    .trauma-list {
+      padding: 8px 0px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      label {
+        cursor: pointer;
+        font-size: 18px;
+        user-select: none;
+        & + label {
+          margin-left: 8px;
+        }
+        input[type='checkbox'] {
+          display: none;
+          &:checked ~ .checkmark {
+            color: $sfLightBlue;
+          }
+        }
+        .checkmark {
+          text-decoration: none;
+          font-weight: 500;
+          &:hover {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .stress-trauma {
+      .stress,
+      .trauma {
+        @include xoomer(16px, 32px);
+        position: relative;
+        .black-bar {
+          position: absolute;
+          right: 0;
+          left: 0;
+          top: 12px;
+          bottom: 12px;
+          background-color: $sfBlack;
+        }
+      }
+    }
+
+    .harm-recovery {
+      .recovery {
+        flex-grow: 0;
+        .clock {
+          height: 100px;
+          width: 100px;
+          border-radius: 100px;
+          background-color: $sfDarkBlue;
+          margin: 12px 16px;
+        }
+      }
+      .harm {
+        & > .flexrow {
+          align-items: center;
+        }
+      }
+      input {
+        font-size: 20px;
+        margin: 4px 0px;
+      }
+      .harm-recovery-header {
+        padding: 4px 0px;
+        background-color: $sfBlack;
+        color: $sfWhite;
+        text-align: center;
+        flex-grow: 0;
+      }
+      .harm-label {
+        flex-grow: 0;
+        min-width: 5em;
+      }
+      .harm-explain {
+        flex-grow: 0;
+        min-width: 7em;
+        text-align: right;
+      }
+    }
+  }
+
+  .flex1 {
+    flex: 1;
+  }
+
+  .well {
+    background-color: $sfWhite;
+    border: 4px solid $sfBlack;
+    margin: 4px 0px;
+    & + .well {
+      margin-left: 4px;
+    }
+    padding: 4px 8px;
+  }
+
+  input[type='text'] {
+    height: auto;
+    padding: 0 2px;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid $sfBlack;
+    background: none;
+    &:focus {
+      box-shadow: none;
+    }
+    &::placeholder {
+      opacity: 0.4;
+    }
+    &::-moz-placeholder {
+      opacity: 0.4;
+    }
+    &::-webkit-input-placeholder {
+      opacity: 0.4;
+    }
+  }
+}

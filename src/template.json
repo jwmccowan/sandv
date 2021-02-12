@@ -11,10 +11,42 @@
       }
     },
     "character": {
-      "templates": ["living"],
+      "templates": [],
       "details": {
-        "alias": "",
-        "name": ""
+        "alias": ""
+      },
+      "health": {
+        "harm": {
+          "light": {
+            "one": "",
+            "two": ""
+          },
+          "medium": {
+            "one": "",
+            "two": ""
+          },
+          "heavy": {
+            "one": ""
+          },
+          "deadly": {
+            "one": ""
+          }
+        },
+        "stress": {
+          "value": [0],
+          "max": 9,
+          "max_default": 9,
+          "label_default": "Stress",
+          "label": "Stress"
+        },
+        "trauma": {
+          "value": [0],
+          "max": 4,
+          "max_default": 4,
+          "label_default": "Trauma",
+          "label": "Trauma",
+          "list": {}
+        }
       },
       "attributes": {
         "insight": {

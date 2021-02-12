@@ -1,0 +1,64 @@
+<div id="harm-recovery" class="harm-recovery flexrow">
+  <div id="harm" class="harm flexcol">
+    <div class="harm-recovery-header">Harm</div>
+    <div class="harm-heavy flexrow">
+      <label class="harm-label" for="character-{{actor._id}}-harm-heavy-one">
+        Heavy
+      </label>
+      <input
+        id="character-{{actor._id}}-harm-heavy-one"
+        name="data.health.harm.heavy.one"
+        type="text"
+        value="{{data.health.harm.heavy.one}}"
+        placeholder="Heavy Harm"
+      />
+      <div class="harm-explain">Need Help</div>
+    </div>
+    <div class="harm-medium flexrow">
+      <label class="harm-label" for="character-{{actor._id}}-harm-medium-one">
+        Medium
+      </label>
+      <input
+        id="character-{{actor._id}}-harm-medium-one"
+        name="data.health.harm.medium.one"
+        type="text"
+        value="{{data.health.harm.medium.one}}"
+        placeholder="Medium Harm"
+      />
+      <input
+        id="character-{{actor._id}}-harm-medium-two"
+        name="data.health.harm.medium.two"
+        type="text"
+        value="{{data.health.harm.medium.two}}"
+        placeholder="Medium Harm"
+      />
+      <div class="harm-explain">-1D</div>
+    </div>
+    <div class="harm-light flexrow">
+      <label class="harm-label" for="character-{{actor._id}}-harm-light-one">
+        Light
+      </label>
+      <input
+        id="character-{{actor._id}}-harm-light-one"
+        name="data.health.harm.light.one"
+        type="text"
+        value="{{data.health.harm.light.one}}"
+        placeholder="Light Harm"
+      />
+      <input
+        id="character-{{actor._id}}-harm-light-two"
+        name="data.health.harm.light.two"
+        type="text"
+        value="{{data.health.harm.light.two}}"
+        placeholder="Light Harm"
+      />
+      <div class="harm-explain">Less Effect</div>
+    </div>
+  </div>
+  <div id="recovery" class="recovery flexcol">
+    <div class="harm-recovery-header">Recovery</div>
+    <div class="recovery-clock-container">
+      <div class="clock"></div>
+    </div>
+  </div>
+</div>

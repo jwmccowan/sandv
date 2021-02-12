@@ -61,3 +61,41 @@ Hooks.once('ready', function () {
 });
 
 // Add any additional hooks if necessary
+// Multiboxes.
+Handlebars.registerHelper('multiboxes', function (selected, options) {
+  let html = options.fn(this);
+  console.log('eggs', selected, typeof selected);
+
+  // Fix for single non-array values.
+  if (!Array.isArray(selected)) {
+    selected = [selected];
+  }
+
+  if (typeof selected !== 'undefined') {
+    selected.forEach(selected_value => {
+      if (selected_value !== false) {
+        const escapedValue = escapeRegExp(
+          Handlebars.escapeExpression(selected_value),
+        );
+        const rgx = new RegExp(' value="' + escapedValue + '"');
+        html = html.replace(rgx, '$& checked="checked"');
+      }
+    });
+  }
+  return html;
+});
+
+Handlebars.registerHelper(
+  'from_to',
+  function (from: number, to: number, block) {
+    var accum = '';
+    for (var i = from; i <= to; ++i) {
+      accum += block.fn(i);
+    }
+    return accum;
+  },
+);
+
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}

@@ -4,7 +4,7 @@ export class CharacterActor extends Actor<CharacterDataType> {
 
     const actorData = this.data;
     const { data, flags, type } = actorData;
-    console.log('eggs', actorData);
+    console.log('eggs', 'actorData', actorData);
 
     if (type === 'character') {
       this._prepareCharacterData(actorData);
@@ -17,9 +17,5 @@ export class CharacterActor extends Actor<CharacterDataType> {
   private _prepareCharacterData({ data }: ActorData<CharacterDataType>) {
     // Make modifications to data here, for derived stats
     // TODO: what's clearest way to type derived stats?
-    data.health.value = Math.min(
-      data.health.max,
-      Math.max(data.health.min, data.health.value),
-    );
   }
 }

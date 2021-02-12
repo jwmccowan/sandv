@@ -43,6 +43,6 @@ export class CharacterActorSheet extends ActorSheet<
 
   private onHelloClick(ev: JQuery.ClickEvent): void {
     console.log('hello');
-    this.actor.update({ 'data.health.value': 1 });
+    this.actor.update({ name: 'Badda Bing' });
   }
 }
